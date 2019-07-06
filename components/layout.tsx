@@ -1,4 +1,6 @@
 import React from "react"
+import styled from "styled-components"
+
 import Head from "./head"
 import Header from "./header"
 
@@ -6,18 +8,18 @@ interface Props {
   children: React.ReactNode
 }
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: "1px solid #DDD"
-}
+const StyledLayout = styled.div`
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+`
 
 const Layout = (props: Props) => (
-  <div style={layoutStyle}>
+  <StyledLayout>
     <Head />
     <Header />
     {props.children}
-  </div>
+  </StyledLayout>
 )
 
 export default Layout
