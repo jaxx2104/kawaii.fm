@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "next build",
-    "dev": "next",
+    "build": "next build src",
+    "dev": "next src",
     "format": "prettier --write \"**/*.+(js|jsx|json|md)\" --ignore-path .gitignore",
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
     "start": "next start",
