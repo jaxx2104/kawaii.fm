@@ -1,6 +1,6 @@
-node_modules/
-public
-storybook-static
 .DS_Store
-.next/
 .vscode/
+dist/
+node_modules/
+public/
+storybook-static/
