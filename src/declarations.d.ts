@@ -6,4 +6,7 @@ declare namespace NodeJS {
 }
 
 // module
+declare module "*.gif"
+declare module "*.jpg"
+declare module "*.png"
 declare module "styled-modern-normalize"
