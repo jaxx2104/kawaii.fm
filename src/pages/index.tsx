@@ -1,9 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
+import Contents from "../components/contents"
+import Profile from "../components/profile"
 
 const Index = () => (
   <Layout>
-    <p>Hello Next.js</p>
+    <Profile />
+    <Contents />
   </Layout>
 )
 
