@@ -1,5 +1,6 @@
 module.exports = {
   env: {
+    browser: true,
     es6: true,
     node: true
   },
@@ -12,7 +13,7 @@ module.exports = {
     "prettier/babel",
     "prettier/react"
   ],
-  parser: "babel-eslint",
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     sourceType: "module",
     ecmaFeatures: {
@@ -28,5 +29,10 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": "warn",
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/interface-name-prefix": "warn"
+  },
+  settings: {
+    "react": {
+      "version": "detect"
+    }
   }
 }
