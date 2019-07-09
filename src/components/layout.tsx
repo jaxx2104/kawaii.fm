@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const StyledLayout = styled.div`
-  height: calc(100vh - 24px * 2);
+  min-height: calc(100vh - 24px * 2);
   margin: 24px;
   padding: 24px;
   border: 3px solid #333;

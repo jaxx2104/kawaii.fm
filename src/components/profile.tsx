@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
+import AudioAnalyzer from "./audio-analyzer"
 import image from "../assets/mu.jpg"
 
 const ContentsWrap = styled.div`
@@ -17,6 +18,8 @@ const Flex = styled.div`
 
 const ProfileInfo = styled.div`
   text-align: left;
+  margin-left: 24px;
+  margin-right: 24px;
 `
 
 const StyledImg = styled.img`
@@ -26,18 +29,26 @@ const StyledImg = styled.img`
   border-radius: 50%;
 `
 
-const Profile = () => (
-  <ContentsWrap>
-    <h2>声のひと</h2>
-    <Flex>
-      <StyledImg src={image} />
-      <ProfileInfo>
-        <p>２さい（いやいや期）</p>
-        <p>好きのもの：どうぶつ</p>
-        <p>嫌いなもの：おに</p>
-      </ProfileInfo>
-    </Flex>
-  </ContentsWrap>
-)
+interface Props {
+  audio: HTMLAudioElement
+}
+
+const Profile = (props: Props) => {
+  const { audio } = props
+  return (
+    <ContentsWrap>
+      <h2>声のひと</h2>
+      <Flex>
+        <StyledImg src={image} />
+        <ProfileInfo>
+          <p>２さい（いやいや期）</p>
+          <p>好きのもの：どうぶつ</p>
+          <p>嫌いなもの：おに</p>
+        </ProfileInfo>
+        <AudioAnalyzer audio={audio} />
+      </Flex>
+    </ContentsWrap>
+  )
+}
 
 export default Profile

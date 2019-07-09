@@ -1,8 +1,10 @@
 import React from "react"
-import useAudio from "../helpers/useAudio"
 import styled from "styled-components"
 
+import useAudio from "../helpers/useAudio"
+
 interface Props {
+  audio: HTMLAudioElement
   label: string
 }
 
@@ -29,9 +31,8 @@ const StyledButton = styled.div`
 `
 
 const AudioPlayer = (props: Props) => {
-  const { label } = props
-  const audio = useAudio("/static/assets/warp1.wav")
-  const { playing, play, pause } = audio
+  const { audio, label } = props
+  const { playing, play, pause } = useAudio(audio)
 
   return (
     <React.Fragment>

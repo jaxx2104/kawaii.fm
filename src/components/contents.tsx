@@ -20,23 +20,30 @@ const Flex = styled.div`
   }
 `
 
-const Contents = () => (
-  <ContentsWrap>
-    <h2>うた</h2>
-    <Flex>
-      <AudioPlayer label="とんとんとんとんひげじいさん" />
-      <AudioPlayer label="はたらくくるま" />
-      <AudioPlayer label="大きな栗の木の下で" />
-      <AudioPlayer label="いとまき" />
-      <AudioPlayer label="おべんとうばこのうた" />
-      <AudioPlayer label="パンダうさぎコアラ" />
-      <AudioPlayer label="アンパンマンたいそう" />
-    </Flex>
-    <h2>おはなし</h2>
-    <Flex>
-      <AudioPlayer label="ちがうちがうつるつる" />
-    </Flex>
-  </ContentsWrap>
-)
+interface Props {
+  audio: HTMLAudioElement
+}
+
+const Contents = (props: Props) => {
+  const { audio } = props
+  return (
+    <ContentsWrap>
+      <h2>うた</h2>
+      <Flex>
+        <AudioPlayer label="とんとんとんとんひげじいさん" audio={audio} />
+        <AudioPlayer label="はたらくくるま" audio={audio} />
+        <AudioPlayer label="大きな栗の木の下で" audio={audio} />
+        <AudioPlayer label="いとまき" audio={audio} />
+        <AudioPlayer label="おべんとうばこのうた" audio={audio} />
+        <AudioPlayer label="パンダうさぎコアラ" audio={audio} />
+        <AudioPlayer label="アンパンマンたいそう" audio={audio} />
+      </Flex>
+      <h2>おはなし</h2>
+      <Flex>
+        <AudioPlayer label="ちがうちがうつるつる" audio={audio} />
+      </Flex>
+    </ContentsWrap>
+  )
+}
 
 export default Contents

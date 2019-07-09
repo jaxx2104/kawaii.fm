@@ -8,8 +8,8 @@ interface Type {
   jump: (value: number) => number
 }
 
-export default (url: string | undefined) => {
-  let result: Type = {
+export default (audio: HTMLAudioElement) => {
+  const result: Type = {
     playing: false,
     currentTime: 0,
     jump: () => 0
@@ -19,7 +19,6 @@ export default (url: string | undefined) => {
     return result
   }
 
-  const [audio] = React.useState(new Audio(url))
   const [, _forceUpdate] = React.useState(false)
   const forceUpdate = () => _forceUpdate(prevState => !prevState)
 
@@ -38,13 +37,10 @@ export default (url: string | undefined) => {
     }
   }, [])
 
-  result = {
-    playing: !audio.paused,
-    currentTime: audio.currentTime,
-    play: () => audio.play(),
-    pause: () => audio.pause(),
-    jump: (value: number) => (audio.currentTime += value)
-  }
-
+  result.playing = !audio.paused
+  result.currentTime = audio.currentTime
+  result.play = () => audio.play()
+  result.pause = () => audio.pause()
+  result.jump = (value: number) => (audio.currentTime += value)
   return result
 }
