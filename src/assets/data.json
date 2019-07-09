@@ -1,0 +1,42 @@
+[
+  {
+    "category": "うた",
+    "label": "とんとんとんとんひげじいさん",
+    "src": "/static/assets/warp1.wav"
+  },
+  {
+    "category": "うた",
+    "label": "はたらくくるま",
+    "src": "/static/assets/warp2.wav"
+  },
+  {
+    "category": "うた",
+    "label": "大きな栗の木の下で",
+    "src": "/static/assets/warp2.wav"
+  },
+  {
+    "category": "うた",
+    "label": "いとまき",
+    "src": "/static/assets/warp2.wav"
+  },
+  {
+    "category": "うた",
+    "label": "おべんとうばこのうた",
+    "src": "/static/assets/warp2.wav"
+  },
+  {
+    "category": "うた",
+    "label": "パンダうさぎコアラ",
+    "src": "/static/assets/warp2.wav"
+  },
+  {
+    "category": "うた",
+    "label": "アンパンマンたいそう",
+    "src": "/static/assets/warp2.wav"
+  },
+  {
+    "category": "おはなし",
+    "label": "ちがうちがうつるつる",
+    "src": "/static/assets/warp2.wav"
+  }
+]

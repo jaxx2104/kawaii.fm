@@ -4,8 +4,9 @@ import styled from "styled-components"
 import useAudio from "../helpers/useAudio"
 
 interface Props {
-  audio: HTMLAudioElement
+  audio?: HTMLAudioElement
   label: string
+  src?: string
 }
 
 const StyledButton = styled.div`
@@ -31,15 +32,13 @@ const StyledButton = styled.div`
 `
 
 const AudioPlayer = (props: Props) => {
-  const { audio, label } = props
-  const { playing, play, pause } = useAudio(audio)
+  const { label, src } = props
+  const { playing, play, pause } = useAudio()
 
   return (
-    <React.Fragment>
-      <StyledButton onClick={playing ? pause : play}>
-        {playing ? "とめる" : label}
-      </StyledButton>
-    </React.Fragment>
+    <StyledButton onClick={playing ? pause : () => play(src)}>
+      {playing ? "とめる" : label}
+    </StyledButton>
   )
 }
 

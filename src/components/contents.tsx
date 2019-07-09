@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import AudioPlayer from "./audio-player"
+import { groupBy } from "../helpers/groupBy"
+import data from "../assets/data.json"
 
 const ContentsWrap = styled.div`
   margin: 24px;
@@ -20,28 +22,24 @@ const Flex = styled.div`
   }
 `
 
-interface Props {
-  audio: HTMLAudioElement
-}
-
-const Contents = (props: Props) => {
-  const { audio } = props
+const Contents = () => {
+  const items = groupBy(data, "category")
+  const keys = Object.keys(items)
   return (
     <ContentsWrap>
-      <h2>うた</h2>
-      <Flex>
-        <AudioPlayer label="とんとんとんとんひげじいさん" audio={audio} />
-        <AudioPlayer label="はたらくくるま" audio={audio} />
-        <AudioPlayer label="大きな栗の木の下で" audio={audio} />
-        <AudioPlayer label="いとまき" audio={audio} />
-        <AudioPlayer label="おべんとうばこのうた" audio={audio} />
-        <AudioPlayer label="パンダうさぎコアラ" audio={audio} />
-        <AudioPlayer label="アンパンマンたいそう" audio={audio} />
-      </Flex>
-      <h2>おはなし</h2>
-      <Flex>
-        <AudioPlayer label="ちがうちがうつるつる" audio={audio} />
-      </Flex>
+      {keys.map(key => {
+        const players = items[key]
+        return (
+          <React.Fragment key={key}>
+            <h2>{key}</h2>
+            <Flex>
+              {players.map((player, i) => (
+                <AudioPlayer key={i} label={player.label} src={player.src} />
+              ))}
+            </Flex>
+          </React.Fragment>
+        )
+      })}
     </ContentsWrap>
   )
 }

@@ -29,12 +29,7 @@ const StyledImg = styled.img`
   border-radius: 50%;
 `
 
-interface Props {
-  audio: HTMLAudioElement
-}
-
-const Profile = (props: Props) => {
-  const { audio } = props
+const Profile = () => {
   return (
     <ContentsWrap>
       <h2>声のひと</h2>
@@ -45,7 +40,7 @@ const Profile = (props: Props) => {
           <p>好きのもの：どうぶつ</p>
           <p>嫌いなもの：おに</p>
         </ProfileInfo>
-        <AudioAnalyzer audio={audio} />
+        <AudioAnalyzer />
       </Flex>
     </ContentsWrap>
   )

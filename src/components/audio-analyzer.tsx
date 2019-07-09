@@ -2,7 +2,7 @@ import * as React from "react"
 import AudioVisualiser from "./audio-visualiser"
 
 interface Props {
-  audio: HTMLAudioElement
+  audio?: HTMLAudioElement
 }
 
 interface State {
