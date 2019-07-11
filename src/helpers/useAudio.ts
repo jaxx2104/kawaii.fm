@@ -1,27 +1,8 @@
 import React from "react"
+import { AudioType } from "../@types/AudioType"
 
-interface Type {
-  audio: HTMLAudioElement
-  playing: boolean
-  currentTime: number
-  play?: (value: string) => void
-  pause?: () => void
-  jump: (value: number) => number
-}
-
-export default () => {
-  const result: Type = {
-    audio: null,
-    playing: false,
-    currentTime: 0,
-    jump: () => 0
-  }
-
-  if (!process.browser) {
-    return result
-  }
-
-  const [audio, setAudio] = React.useState(new Audio())
+export const useAudio = () => {
+  const [audio, setAudio] = React.useState(process.browser && new Audio())
   const [, _forceUpdate] = React.useState(false)
   const forceUpdate = () => _forceUpdate(prevState => !prevState)
 
@@ -43,11 +24,13 @@ export default () => {
     }
   }, [audio])
 
-  result.audio = audio
-  result.playing = !audio.paused
-  result.currentTime = audio.currentTime
-  result.play = (value: string) => setAudio(new Audio(value))
-  result.pause = () => audio.pause()
-  result.jump = (value: number) => (audio.currentTime += value)
+  const result: AudioType = {
+    audio,
+    playing: !audio.paused,
+    currentTime: audio.currentTime,
+    play: (value: string) => setAudio(new Audio(value)),
+    pause: () => audio.pause(),
+    jump: (value: number) => (audio.currentTime += value)
+  }
   return result
 }

@@ -1,7 +1,7 @@
-import React from "react"
+import * as React from "react"
 import styled from "styled-components"
 
-import useAudio from "../helpers/useAudio"
+import { AudioContext } from "../helpers/useAudioContext"
 
 interface Props {
   audio?: HTMLAudioElement
@@ -33,7 +33,7 @@ const StyledButton = styled.div`
 
 const AudioPlayer = (props: Props) => {
   const { label, src } = props
-  const { playing, play, pause } = useAudio()
+  const { pause, play, playing } = React.useContext(AudioContext)
 
   return (
     <StyledButton onClick={playing ? pause : () => play(src)}>
