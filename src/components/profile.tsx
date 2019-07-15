@@ -2,7 +2,6 @@ import * as React from "react"
 import styled from "styled-components"
 
 import AudioAnalyzer from "./audio-analyzer"
-import { AudioContext } from "../helpers/useAudioContext"
 import image from "../assets/mu.jpg"
 
 const ContentsWrap = styled.div`
@@ -31,7 +30,6 @@ const StyledImg = styled.img`
 `
 
 const Profile = () => {
-  const { audio } = React.useContext(AudioContext)
   return (
     <ContentsWrap>
       <h2>声のひと</h2>
@@ -42,7 +40,7 @@ const Profile = () => {
           <p>好きのもの：どうぶつ</p>
           <p>嫌いなもの：おに</p>
         </ProfileInfo>
-        <AudioAnalyzer audio={audio} />
+        <AudioAnalyzer />
       </Flex>
     </ContentsWrap>
   )

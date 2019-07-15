@@ -3,17 +3,21 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Contents from "../components/contents"
 import Profile from "../components/profile"
-import { useAudio } from "../helpers/useAudio"
-import { AudioContext } from "../helpers/useAudioContext"
+
+const AppContext = React.createContext(null)
+
+const play = () => {
+  console.log("play")
+}
 
 const Index = () => {
   return (
-    <AudioContext.Provider value={useAudio()}>
+    <AppContext.Provider value={{ play }}>
       <Layout>
         <Profile />
         <Contents />
       </Layout>
-    </AudioContext.Provider>
+    </AppContext.Provider>
   )
 }
 

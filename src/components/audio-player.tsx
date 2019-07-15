@@ -1,8 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { AudioContext } from "../helpers/useAudioContext"
-
 interface Props {
   audio?: HTMLAudioElement
   label: string
@@ -33,11 +31,10 @@ const StyledButton = styled.div`
 
 const AudioPlayer = (props: Props) => {
   const { label, src } = props
-  const { pause, play, playing } = React.useContext(AudioContext)
 
   return (
-    <StyledButton onClick={playing ? pause : () => play(src)}>
-      {playing ? "とめる" : label}
+    <StyledButton onClick={true ? () => {} : () => {}}>
+      {false ? "とめる" : label}
     </StyledButton>
   )
 }
