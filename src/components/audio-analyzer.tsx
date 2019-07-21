@@ -31,6 +31,7 @@ class AudioAnalyser extends React.Component<Props, State> {
   componentDidMount() {
     this.connect("")
     emitter.addListener("play", (args: string) => {
+      this.disconnect()
       this.connect(args)
     })
   }
@@ -61,6 +62,7 @@ class AudioAnalyser extends React.Component<Props, State> {
   }
 
   disconnect() {
+    if (!this.analyser && !this.source) return
     cancelAnimationFrame(this.rafId)
     this.analyser.disconnect()
     this.source.disconnect()

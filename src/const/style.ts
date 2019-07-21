@@ -4,8 +4,8 @@ export const FONT_WEIGHT = 900
 export const FONT_SIZE = "1.4rem"
 // size
 export const SPACE_SIZE = "24px"
-export const CONTENT_SIZE = "780px"
-export const ICON_SIZE = "60px"
+export const CONTENT_SIZE = "1280px"
+export const ICON_SIZE = "100px"
 // color
 export const TEXT_COLOR = "#333"
 export const FOREGROUND_COLOR = "#fff"

@@ -18,7 +18,6 @@ const Flex = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: left;
-  margin: ${style.SPACE_SIZE};
 
   div {
     margin: calc(${style.SPACE_SIZE} / 2);

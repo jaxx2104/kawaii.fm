@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { style } from "../const"
 
 const ProfileCanvas = styled.canvas`
-  margin-left: ${style.SPACE_SIZE};
+  margin: ${style.SPACE_SIZE};
 `
 
 interface Props {
@@ -17,6 +17,10 @@ class AudioVisualiser extends React.Component<Props> {
   constructor(props: Readonly<Props>) {
     super(props)
     this.canvas = React.createRef()
+  }
+
+  componentDidMount() {
+    this.draw()
   }
 
   componentDidUpdate() {
@@ -43,7 +47,7 @@ class AudioVisualiser extends React.Component<Props> {
   }
 
   render() {
-    return <ProfileCanvas width="320" height="80" ref={this.canvas} />
+    return <ProfileCanvas width="320" height="100" ref={this.canvas} />
   }
 }
 

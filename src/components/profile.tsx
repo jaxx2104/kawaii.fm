@@ -14,18 +14,18 @@ const ContentsWrap = styled.div`
 const Flex = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: left;
   align-items: center;
 `
 
 const ProfileInfo = styled.div`
   text-align: left;
-  margin-left: ${style.SPACE_SIZE};
-  margin-right: ${style.SPACE_SIZE};
+  margin: ${style.SPACE_SIZE};
 `
 
 const StyledImg = styled.img`
-  margin: ${style.SPACE_SIZE};
+  margin: calc(${style.SPACE_SIZE} / 2);
   height: ${style.ICON_SIZE};
   width: ${style.ICON_SIZE};
   border-radius: 50%;
