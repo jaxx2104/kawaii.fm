@@ -1,8 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import AudioPlayer from "./audio-player"
+
 import { groupBy } from "../helpers/groupBy"
 import data from "../assets/data.json"
+import AudioPlayer from "./audio-player"
 
 const ContentsWrap = styled.div`
   margin: 24px;

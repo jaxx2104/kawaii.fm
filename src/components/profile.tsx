@@ -1,8 +1,9 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import AudioAnalyzer from "./audio-analyzer"
 import image from "../assets/mu.jpg"
+
+import AudioAnalyzer from "./audio-analyzer"
 
 const ContentsWrap = styled.div`
   margin: 24px;

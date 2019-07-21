@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
@@ -25,11 +26,11 @@ module.exports = {
     }
   },
   plugins: [
-    "@typescript-eslint", 
-    "babel", 
+    "@typescript-eslint",
+    "babel",
     "import",
     "promise",
-    "prettier", 
+    "prettier",
     "react",
     "react-hooks"
   ],
@@ -42,11 +43,22 @@ module.exports = {
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/interface-name-prefix": "warn",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    'import/no-named-default': 'error',
+    "import/order": [
+      "error",
+      {
+        groups: [
+          ["builtin", "external", "internal"],
+          ["parent", "sibling", "index"]
+        ],
+        "newlines-between": "always-and-inside-groups"
+      }
+    ]
   },
   settings: {
-    "react": {
-      "version": "detect"
+    react: {
+      version: "detect"
     }
   }
 }
