@@ -1,42 +1,162 @@
 [
   {
     "category": "うた",
-    "label": "とんとんとんとんひげじいさん",
-    "src": "/static/assets/warp1.wav"
+    "label": "アンパンマンたいそう",
+    "src": "/static/assets/アンパンマンたいそう.m4a"
   },
   {
     "category": "うた",
-    "label": "はたらくくるま",
-    "src": "/static/assets/warp2.wav"
-  },
-  {
-    "category": "うた",
-    "label": "大きな栗の木の下で",
-    "src": "/static/assets/warp2.wav"
+    "label": "アンパンマンたいそう2",
+    "src": "/static/assets/アンパンマンたいそう2.m4a"
   },
   {
     "category": "うた",
     "label": "いとまき",
-    "src": "/static/assets/warp2.wav"
+    "src": "/static/assets/いとまき.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "いとまき2",
+    "src": "/static/assets/いとまき2.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "おおきなくりのきのしたで",
+    "src": "/static/assets/おおきなくりのきのしたで.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "おおきなくりのきのしたで2",
+    "src": "/static/assets/おおきなくりのきのしたで2.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "おおきなくりのきのしたで3",
+    "src": "/static/assets/おおきなくりのきのしたで3.m4a"
   },
   {
     "category": "うた",
     "label": "おべんとうばこのうた",
-    "src": "/static/assets/warp2.wav"
+    "src": "/static/assets/おべんとうばこのうた.m4a"
   },
   {
     "category": "うた",
-    "label": "パンダうさぎコアラ",
-    "src": "/static/assets/warp2.wav"
+    "label": "おべんとうばこのうた2",
+    "src": "/static/assets/おべんとうばこのうた2.m4a"
   },
   {
     "category": "うた",
-    "label": "アンパンマンたいそう",
-    "src": "/static/assets/warp2.wav"
+    "label": "さいたさいた",
+    "src": "/static/assets/さいたさいた.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "とんとんとんとん",
+    "src": "/static/assets/とんとんとんとん.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "なぞのうた",
+    "src": "/static/assets/なぞのうた.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "はたらくくるま",
+    "src": "/static/assets/はたらくくるま.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "ぱんだうさぎこあら",
+    "src": "/static/assets/ぱんだうさぎこあら.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "むすんでひらいて",
+    "src": "/static/assets/むすんでひらいて.m4a"
+  },
+  {
+    "category": "うた",
+    "label": "むすんでひらいて2",
+    "src": "/static/assets/むすんでひらいて2.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "えい",
+    "src": "/static/assets/えい.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "おきてよ",
+    "src": "/static/assets/おきてよ.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "がまんがまん",
+    "src": "/static/assets/がまんがまん.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "かわいい",
+    "src": "/static/assets/かわいい.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "ぐりちゃんあいたい",
+    "src": "/static/assets/ぐりちゃんあいたい.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "こっちか",
+    "src": "/static/assets/こっちか.m4a"
   },
   {
     "category": "おはなし",
     "label": "ちがうちがうつるつる",
-    "src": "/static/assets/warp2.wav"
+    "src": "/static/assets/ちがうちがうつるつる.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "ちょい",
+    "src": "/static/assets/ちょい.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "つるつるだよ",
+    "src": "/static/assets/つるつるだよ.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "ねんねする",
+    "src": "/static/assets/ねんねする.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "はんぶんこしよ",
+    "src": "/static/assets/はんぶんこしよ.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "ひーちゃんだよ",
+    "src": "/static/assets/ひーちゃんだよ.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "ひーちゃんの",
+    "src": "/static/assets/ひーちゃんの.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "やーだ",
+    "src": "/static/assets/やーだ.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "やだやだ",
+    "src": "/static/assets/やだやだ.m4a"
+  },
+  {
+    "category": "おはなし",
+    "label": "やだよ",
+    "src": "/static/assets/やだよ.m4a"
   }
 ]
