@@ -2,6 +2,8 @@ import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
 import { modernNormalize } from "styled-modern-normalize"
 
+import { style } from "../const"
+
 import Head from "./head"
 import Header from "./header"
 
@@ -20,28 +22,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #ffeb3b;
-    color: #333;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: 900;
-    font-size: 1.4rem;
-  }
-
-  h1 {
-    font-size: 5.0em;
-  }
-
-  h2 {
-    font-size: 1.6em;
-    margin: 12px 0;
+    background-color: ${style.BACKGROUND_COLOR};
+    color: ${style.TEXT_COLOR};
+    font-family: "M PLUS Rounded 1c", ${style.FONT_FAMILY}, sans-serif;
+    font-weight: ${style.FONT_WEIGHT};
+    font-size: ${style.FONT_SIZE};
   }
 `
 
 const StyledLayout = styled.div`
-  min-height: calc(100vh - 24px * 2);
-  margin: 24px;
-  padding: 24px;
-  border: 3px solid #333;
+  min-height: calc(100vh - ${style.SPACE_SIZE} * 2);
+  margin: ${style.SPACE_SIZE};
+  padding: ${style.SPACE_SIZE};
+  border: 3px solid ${style.BORDER_COLOR};
 `
 
 const Layout = (props: Props) => (

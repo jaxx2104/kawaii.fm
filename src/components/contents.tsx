@@ -2,12 +2,14 @@ import React from "react"
 import styled from "styled-components"
 
 import { groupBy } from "../helpers/groupBy"
+import { style } from "../const"
 import data from "../assets/data.json"
+
 import AudioPlayer from "./audio-player"
 
 const ContentsWrap = styled.div`
-  margin: 24px;
-  max-width: 780px;
+  margin: ${style.SPACE_SIZE};
+  max-width: ${style.CONTENT_SIZE};
 `
 
 const Flex = styled.div`
@@ -16,10 +18,10 @@ const Flex = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: left;
-  margin: 24px;
+  margin: ${style.SPACE_SIZE};
 
   div {
-    margin: 12px;
+    margin: calc(${style.SPACE_SIZE} / 2);
   }
 `
 

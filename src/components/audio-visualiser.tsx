@@ -1,8 +1,10 @@
 import * as React from "react"
 import styled from "styled-components"
 
+import { style } from "../const"
+
 const ProfileCanvas = styled.canvas`
-  margin-left: 48px;
+  margin-left: ${style.SPACE_SIZE};
 `
 
 interface Props {

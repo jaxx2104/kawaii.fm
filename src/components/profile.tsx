@@ -1,13 +1,14 @@
 import * as React from "react"
 import styled from "styled-components"
 
+import { style } from "../const"
 import image from "../assets/mu.jpg"
 
 import AudioAnalyzer from "./audio-analyzer"
 
 const ContentsWrap = styled.div`
-  margin: 24px;
-  max-width: 780px;
+  margin: ${style.SPACE_SIZE};
+  max-width: ${style.CONTENT_SIZE};
 `
 
 const Flex = styled.div`
@@ -19,14 +20,14 @@ const Flex = styled.div`
 
 const ProfileInfo = styled.div`
   text-align: left;
-  margin-left: 24px;
-  margin-right: 24px;
+  margin-left: ${style.SPACE_SIZE};
+  margin-right: ${style.SPACE_SIZE};
 `
 
 const StyledImg = styled.img`
-  margin: 24px;
-  height: 60px;
-  width: 60px;
+  margin: ${style.SPACE_SIZE};
+  height: ${style.ICON_SIZE};
+  width: ${style.ICON_SIZE};
   border-radius: 50%;
 `
 

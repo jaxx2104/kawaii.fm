@@ -1,10 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 
-import { site } from "../const"
+import { site, style } from "../const"
 
 const StyledLogo = styled.div`
-  margin: 24px;
+  margin: ${style.SPACE_SIZE};
+
+  h1 {
+    font-size: 8rem;
+  }
 `
 
 const Header = () => (

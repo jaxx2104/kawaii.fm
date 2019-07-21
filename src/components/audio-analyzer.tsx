@@ -1,4 +1,7 @@
 import * as React from "react"
+
+import { emitter } from "../helpers/emitter"
+
 import AudioVisualiser from "./audio-visualiser"
 
 interface Props {
@@ -17,7 +20,7 @@ class AudioAnalyser extends React.Component<Props, State> {
   rafId: number
 
   state = {
-    audioData: new Uint8Array(0)
+    audioData: new Uint8Array(32)
   }
 
   constructor(props: Readonly<Props>) {
@@ -27,10 +30,14 @@ class AudioAnalyser extends React.Component<Props, State> {
 
   componentDidMount() {
     this.connect("")
+    emitter.addListener("play", (args: string) => {
+      this.connect(args)
+    })
   }
 
   componentWillUnmount() {
     this.disconnect()
+    emitter.removeAllListeners("play")
   }
 
   tick() {
@@ -40,6 +47,7 @@ class AudioAnalyser extends React.Component<Props, State> {
   }
 
   connect(src: string) {
+    if (!src) return
     this.audio = new Audio(src)
     const context = new AudioContext()
     this.analyser = context.createAnalyser()
@@ -49,7 +57,7 @@ class AudioAnalyser extends React.Component<Props, State> {
     this.source.connect(this.analyser)
     this.analyser.connect(context.destination)
     this.rafId = requestAnimationFrame(this.tick)
-    if (this.audio.src) this.audio.play()
+    return this.audio.play()
   }
 
   disconnect() {
@@ -59,11 +67,7 @@ class AudioAnalyser extends React.Component<Props, State> {
   }
 
   render() {
-    return (
-      <div onClick={() => this.connect("/static/assets/warp1.wav")}>
-        <AudioVisualiser audioData={this.state.audioData} />
-      </div>
-    )
+    return <AudioVisualiser audioData={this.state.audioData} />
   }
 }
 
