@@ -44,13 +44,14 @@ module.exports = {
     "@typescript-eslint/interface-name-prefix": "warn",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    'import/no-named-default': 'error',
+    "import/no-named-default": "error",
     "import/order": [
       "error",
       {
         groups: [
           ["builtin", "external", "internal"],
-          ["parent"], ["sibling", "index"]
+          ["parent"],
+          ["sibling", "index"]
         ],
         "newlines-between": "always-and-inside-groups"
       }
