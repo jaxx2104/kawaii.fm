@@ -1,7 +1,7 @@
 {
   "name": "kawaii.fm",
   "version": "1.0.0",
-  "description": "",
+  "description": "kawaii.fm is super pretty",
   "main": "index.js",
   "scripts": {
     "build": "next build src && next export src -o out",
