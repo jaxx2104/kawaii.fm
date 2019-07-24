@@ -10,6 +10,10 @@ import AudioPlayer from "./audio-player"
 const ContentsWrap = styled.div`
   margin: ${style.SPACE_SIZE};
   max-width: ${style.CONTENT_SIZE};
+
+  @media only screen and (max-width: 768px) {
+    margin: ${style.SPACE_SIZE} calc(${style.SPACE_SIZE} / 2);
+  }
 `
 
 const Flex = styled.div`

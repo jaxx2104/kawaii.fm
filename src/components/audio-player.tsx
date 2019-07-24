@@ -30,13 +30,22 @@ const StyledButton = styled.div`
   :active {
     background-color: ${style.ACTIVE_BUTTON_COLOR};
   }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(100% - ${style.SPACE_SIZE});
+  }
 `
 
 const AudioPlayer = (props: Props) => {
   const { label, src } = props
 
   return (
-    <StyledButton onClick={() => emitter.emit("play", src)}>
+    <StyledButton
+      onClick={e => {
+        e.preventDefault()
+        return emitter.emit("play", src)
+      }}
+    >
       {label}
     </StyledButton>
   )

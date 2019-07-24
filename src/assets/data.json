@@ -6,43 +6,18 @@
   },
   {
     "category": "うた",
-    "label": "アンパンマンたいそう2",
-    "src": "/static/assets/アンパンマンたいそう2.m4a"
-  },
-  {
-    "category": "うた",
     "label": "いとまき",
-    "src": "/static/assets/いとまき.m4a"
-  },
-  {
-    "category": "うた",
-    "label": "いとまき2",
     "src": "/static/assets/いとまき2.m4a"
   },
   {
     "category": "うた",
     "label": "おおきなくりのきのしたで",
-    "src": "/static/assets/おおきなくりのきのしたで.m4a"
-  },
-  {
-    "category": "うた",
-    "label": "おおきなくりのきのしたで2",
-    "src": "/static/assets/おおきなくりのきのしたで2.m4a"
-  },
-  {
-    "category": "うた",
-    "label": "おおきなくりのきのしたで3",
     "src": "/static/assets/おおきなくりのきのしたで3.m4a"
   },
   {
     "category": "うた",
     "label": "おべんとうばこのうた",
     "src": "/static/assets/おべんとうばこのうた.m4a"
-  },
-  {
-    "category": "うた",
-    "label": "おべんとうばこのうた2",
-    "src": "/static/assets/おべんとうばこのうた2.m4a"
   },
   {
     "category": "うた",
@@ -72,11 +47,6 @@
   {
     "category": "うた",
     "label": "むすんでひらいて",
-    "src": "/static/assets/むすんでひらいて.m4a"
-  },
-  {
-    "category": "うた",
-    "label": "むすんでひらいて2",
     "src": "/static/assets/むすんでひらいて2.m4a"
   },
   {
@@ -101,7 +71,7 @@
   },
   {
     "category": "おはなし",
-    "label": "ぐりちゃんあいたい",
+    "label": "ぐりちゃん(猫)あいたい",
     "src": "/static/assets/ぐりちゃんあいたい.m4a"
   },
   {

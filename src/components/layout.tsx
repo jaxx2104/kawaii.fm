@@ -35,6 +35,11 @@ const StyledLayout = styled.div`
   margin: ${style.SPACE_SIZE};
   padding: ${style.SPACE_SIZE};
   border: 3px solid ${style.BORDER_COLOR};
+
+  @media only screen and (max-width: 768px) {
+    margin: calc(${style.SPACE_SIZE} / 2);
+    padding: calc(${style.SPACE_SIZE} / 2);
+  }
 `
 
 const Layout = (props: Props) => (
