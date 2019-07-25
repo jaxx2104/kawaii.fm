@@ -4,6 +4,8 @@ declare namespace NodeJS {
     browser: boolean
   }
 }
+// function
+declare var webkitAudioContext: any
 
 // module
 declare module "*.gif"

@@ -5,6 +5,11 @@ import { style } from "../const"
 
 const ProfileCanvas = styled.canvas`
   margin: ${style.SPACE_SIZE};
+
+  @media only screen and (max-width: 768px) {
+    margin: calc(${style.SPACE_SIZE} / 2);
+    width: calc(100% - ${style.SPACE_SIZE});
+  }
 `
 
 interface Props {

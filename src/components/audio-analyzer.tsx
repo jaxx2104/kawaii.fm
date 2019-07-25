@@ -50,7 +50,10 @@ class AudioAnalyser extends React.Component<Props, State> {
   connect(src: string) {
     if (!src) return
     this.audio = new Audio(src)
-    const context = new AudioContext()
+    const context: AudioContext = new (typeof AudioContext !== "undefined"
+      ? AudioContext
+      : // eslint-disable-next-line no-undef
+        webkitAudioContext)()
     this.analyser = context.createAnalyser()
     this.analyser.fftSize = 64
     this.source = context.createMediaElementSource(this.audio)

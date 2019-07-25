@@ -10,12 +10,12 @@ interface Props {
   src?: string
 }
 
-const StyledButton = styled.div`
+const StyledButton = styled.button`
   background-color: ${style.DEFAULT_BUTTON_COLOR};
   border-radius: 8px;
   border: 3px solid ${style.BORDER_COLOR};
   color: ${style.TEXT_COLOR};
-  cursor: pointer;
+  margin: calc(${style.SPACE_SIZE} / 2);
   font-size: ${style.FONT_SIZE};
   font-weight: ${style.FONT_WEIGHT};
   line-height: calc(${style.FONT_SIZE} * 2);
@@ -30,13 +30,21 @@ const StyledButton = styled.div`
   :active {
     background-color: ${style.ACTIVE_BUTTON_COLOR};
   }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(100% - ${style.SPACE_SIZE});
+  }
 `
 
 const AudioPlayer = (props: Props) => {
   const { label, src } = props
 
   return (
-    <StyledButton onClick={() => emitter.emit("play", src)}>
+    <StyledButton
+      onClick={() => {
+        return emitter.emit("play", src)
+      }}
+    >
       {label}
     </StyledButton>
   )
