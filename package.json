@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/fbemitter": "2.0.32",
     "@types/next": "8.0.6",
-    "@types/node": "12.7.2",
+    "@types/node": "12.7.3",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
     "@types/styled-components": "4.1.18",
@@ -34,7 +34,7 @@
     "@typescript-eslint/parser": "1.13.0",
     "babel-eslint": "10.0.3",
     "babel-plugin-styled-components": "1.10.6",
-    "eslint": "6.2.2",
+    "eslint": "6.3.0",
     "eslint-config-prettier": "6.1.0",
     "eslint-plugin-babel": "5.3.0",
     "eslint-plugin-import": "2.18.2",
@@ -42,11 +42,11 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.14.3",
     "eslint-plugin-react-hooks": "1.7.0",
-    "husky": "3.0.4",
-    "lint-staged": "9.2.4",
+    "husky": "3.0.5",
+    "lint-staged": "9.2.5",
     "prettier": "1.18.2",
     "styled-modern-normalize": "0.2.0",
-    "typescript": "3.5.3"
+    "typescript": "3.6.2"
   },
   "husky": {
     "hooks": {
