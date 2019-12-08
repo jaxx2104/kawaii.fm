@@ -27,7 +27,7 @@
     "@types/fbemitter": "2.0.32",
     "@types/next": "8.0.7",
     "@types/node": "12.12.14",
-    "@types/react": "16.9.13",
+    "@types/react": "16.9.15",
     "@types/react-dom": "16.9.4",
     "@types/styled-components": "4.4.0",
     "@typescript-eslint/eslint-plugin": "1.13.0",
@@ -46,7 +46,7 @@
     "lint-staged": "9.5.0",
     "prettier": "1.19.1",
     "styled-modern-normalize": "0.2.0",
-    "typescript": "3.7.2"
+    "typescript": "3.7.3"
   },
   "husky": {
     "hooks": {
