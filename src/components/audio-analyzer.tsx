@@ -1,38 +1,38 @@
 import * as React from "react"
+import { Howl, Howler } from "howler"
 
 import { emitter } from "../helpers/emitter"
 
 import AudioVisualiser from "./audio-visualiser"
 
-interface Props {
-  audio?: HTMLAudioElement
-}
+const defaultAudioData = new Uint8Array(32)
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface Props {}
 
 interface State {
   audioData: Uint8Array
 }
 
 class AudioAnalyser extends React.Component<Props, State> {
-  audio: HTMLAudioElement
   analyser: AnalyserNode
   dataArray: Uint8Array
-  source: MediaElementAudioSourceNode
-  rafId: number
+  drawId: number
+  sound: Howl
 
   state = {
-    audioData: new Uint8Array(32)
+    audioData: defaultAudioData
   }
 
   constructor(props: Readonly<Props>) {
     super(props)
-    this.tick = this.tick.bind(this)
+    this.drawAudioVisualiser = this.drawAudioVisualiser.bind(this)
   }
 
   componentDidMount() {
-    this.connect("")
-    emitter.addListener("play", (args: string) => {
+    emitter.addListener("play", (src: string) => {
       this.disconnect()
-      this.connect(args)
+      this.connect(src)
     })
   }
 
@@ -41,34 +41,40 @@ class AudioAnalyser extends React.Component<Props, State> {
     emitter.removeAllListeners("play")
   }
 
-  tick() {
+  drawAudioVisualiser() {
+    this.drawId = requestAnimationFrame(this.drawAudioVisualiser)
     this.analyser.getByteFrequencyData(this.dataArray)
     this.setState({ audioData: this.dataArray })
-    this.rafId = requestAnimationFrame(this.tick)
+  }
+
+  resetAudioVisualiser() {
+    cancelAnimationFrame(this.drawId)
+    this.setState({ audioData: defaultAudioData })
   }
 
   connect(src: string) {
     if (!src) return
-    this.audio = new Audio(src)
-    const context: AudioContext = new (typeof AudioContext !== "undefined"
-      ? AudioContext
-      : // eslint-disable-next-line no-undef
-        webkitAudioContext)()
+    this.sound = new Howl({
+      src,
+      onend: () => {
+        this.resetAudioVisualiser()
+      }
+    })
+    const context = Howler.ctx
     this.analyser = context.createAnalyser()
     this.analyser.fftSize = 64
-    this.source = context.createMediaElementSource(this.audio)
+    Howler.masterGain.connect(this.analyser)
     this.dataArray = new Uint8Array(this.analyser.frequencyBinCount)
-    this.source.connect(this.analyser)
     this.analyser.connect(context.destination)
-    this.rafId = requestAnimationFrame(this.tick)
-    return this.audio.play()
+    this.drawAudioVisualiser()
+    this.sound.play()
   }
 
   disconnect() {
-    if (!this.analyser && !this.source) return
-    cancelAnimationFrame(this.rafId)
+    if (!this.sound) return
+    this.sound.stop()
+    this.resetAudioVisualiser()
     this.analyser.disconnect()
-    this.source.disconnect()
   }
 
   render() {
