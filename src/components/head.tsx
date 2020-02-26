@@ -12,6 +12,10 @@ const Head = () => (
     <title>{site.title}</title>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <link rel="icon" type="image/x-icon" href={favicon} />
+    <link
+      href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,900&display=swap"
+      rel="stylesheet"
+    />
     <meta name="description" content={site.description}></meta>
     <meta property="og:description" content={site.description}></meta>
     <meta property="og:image" content={thumbnail}></meta>
