@@ -1,7 +1,7 @@
 .DS_Store
 .vscode/
-dist/
-node_modules/
-out/
-public/
-storybook-static/
+/public
+/dist
+/out
+/node_modules
+/storybook-static
