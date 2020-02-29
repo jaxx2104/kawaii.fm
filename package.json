@@ -28,7 +28,7 @@
     "@types/fbemitter": "2.0.32",
     "@types/howler": "2.1.2",
     "@types/next": "9.0.0",
-    "@types/node": "13.7.6",
+    "@types/node": "13.7.7",
     "@types/react": "16.9.23",
     "@types/react-dom": "16.9.5",
     "@types/styled-components": "5.0.1",
@@ -43,12 +43,12 @@
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.18.3",
-    "eslint-plugin-react-hooks": "2.4.0",
+    "eslint-plugin-react-hooks": "2.5.0",
     "husky": "4.2.3",
     "lint-staged": "10.0.8",
     "prettier": "1.19.1",
     "styled-modern-normalize": "0.2.0",
-    "typescript": "3.8.2"
+    "typescript": "3.8.3"
   },
   "husky": {
     "hooks": {
