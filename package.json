@@ -9,7 +9,8 @@
     "format": "prettier --write \"**/*.+(js|jsx|json|md)\" --ignore-path .gitignore",
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
     "start": "next start",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -44,17 +45,11 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "3.0.0",
-    "husky": "4.2.3",
-    "lint-staged": "10.1.2",
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
     "prettier": "2.0.4",
     "styled-modern-normalize": "0.2.0",
     "typescript": "3.8.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "tsc --build src/tsconfig.json"
-    }
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -63,5 +58,6 @@
     "*.{json,md}": [
       "prettier --write"
     ]
-  }
+  },
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
 }
