@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import styled from "styled-components"
 
 import { style } from "../const"
@@ -44,7 +44,7 @@ const Profile = () => {
     <ContentsWrap>
       <h2>声のひと</h2>
       <Flex>
-        <StyledImg src={image} />
+        <StyledImg src={image.src} />
         <ProfileInfo>
           <p>２さい（いやいや期）</p>
           <p>好きのもの：どうぶつ</p>

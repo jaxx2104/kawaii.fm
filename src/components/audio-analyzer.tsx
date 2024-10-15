@@ -1,85 +1,81 @@
-import * as React from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Howl, Howler } from "howler"
-
 import { emitter } from "../helpers/emitter"
-
-import AudioVisualiser from "./audio-visualiser"
+import AudioVisualizer from "./audio-visualizer"
 
 const defaultAudioData = new Uint8Array(32)
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Props {}
+const AudioAnalyzer: React.FC = () => {
+  const [audioData, setAudioData] = useState<Uint8Array>(defaultAudioData)
+  const soundRef = useRef<Howl | null>(null)
+  const analyserRef = useRef<AnalyserNode | null>(null)
+  const dataArrayRef = useRef<Uint8Array>(new Uint8Array(32))
+  const drawIdRef = useRef<number | null>(null)
 
-interface State {
-  audioData: Uint8Array
-}
-
-class AudioAnalyser extends React.Component<Props, State> {
-  analyser: AnalyserNode
-  dataArray: Uint8Array
-  drawId: number
-  sound: Howl
-
-  state = {
-    audioData: defaultAudioData
+  const drawAudioVisualiser = () => {
+    drawIdRef.current = requestAnimationFrame(drawAudioVisualiser)
+    if (analyserRef.current && dataArrayRef.current) {
+      analyserRef.current.getByteFrequencyData(dataArrayRef.current)
+      setAudioData(new Uint8Array(dataArrayRef.current))
+    }
   }
 
-  constructor(props: Readonly<Props>) {
-    super(props)
-    this.drawAudioVisualiser = this.drawAudioVisualiser.bind(this)
+  const resetAudioVisualiser = () => {
+    if (drawIdRef.current) {
+      cancelAnimationFrame(drawIdRef.current)
+    }
+    setAudioData(defaultAudioData)
   }
 
-  componentDidMount() {
-    emitter.addListener("play", (src: string) => {
-      this.disconnect()
-      this.connect(src)
-    })
-  }
-
-  componentWillUnmount() {
-    this.disconnect()
-    emitter.removeAllListeners("play")
-  }
-
-  drawAudioVisualiser() {
-    this.drawId = requestAnimationFrame(this.drawAudioVisualiser)
-    this.analyser.getByteFrequencyData(this.dataArray)
-    this.setState({ audioData: this.dataArray })
-  }
-
-  resetAudioVisualiser() {
-    cancelAnimationFrame(this.drawId)
-    this.setState({ audioData: defaultAudioData })
-  }
-
-  connect(src: string) {
+  const connect = (src: string) => {
     if (!src) return
-    this.sound = new Howl({
+
+    soundRef.current = new Howl({
       src,
       onend: () => {
-        this.resetAudioVisualiser()
-      }
+        resetAudioVisualiser()
+      },
     })
+
     const context = Howler.ctx
-    this.analyser = context.createAnalyser()
-    this.analyser.fftSize = 64
-    Howler.masterGain.connect(this.analyser)
-    this.dataArray = new Uint8Array(this.analyser.frequencyBinCount)
-    this.analyser.connect(context.destination)
-    this.drawAudioVisualiser()
-    this.sound.play()
+    const analyser = context.createAnalyser()
+    analyser.fftSize = 64
+    Howler.masterGain.connect(analyser)
+    const dataArray = new Uint8Array(analyser.frequencyBinCount)
+
+    analyserRef.current = analyser
+    dataArrayRef.current = dataArray
+    analyser.connect(context.destination)
+
+    drawAudioVisualiser()
+    soundRef.current.play()
   }
 
-  disconnect() {
-    if (!this.sound) return
-    this.sound.stop()
-    this.resetAudioVisualiser()
-    this.analyser.disconnect()
+  const disconnect = () => {
+    if (soundRef.current) {
+      soundRef.current.stop()
+      resetAudioVisualiser()
+      if (analyserRef.current) {
+        analyserRef.current.disconnect()
+      }
+    }
   }
 
-  render() {
-    return <AudioVisualiser audioData={this.state.audioData} />
-  }
+  useEffect(() => {
+    const playListener = (src: string) => {
+      disconnect()
+      connect(src)
+    }
+
+    emitter.addListener("play", playListener)
+
+    return () => {
+      disconnect()
+      emitter.removeAllListeners("play")
+    }
+  }, [])
+
+  return <AudioVisualizer audioData={audioData} />
 }
 
-export default AudioAnalyser
+export default AudioAnalyzer
