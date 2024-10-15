@@ -4,12 +4,13 @@
   "description": "Next.js + TypeScript + Web Audio API = Super Pretty",
   "main": "index.js",
   "scripts": {
-    "build": "next build src && next export src -o out",
+    "build": "next build src",
     "dev": "next src",
     "format": "prettier --write \"**/*.+(js|jsx|json|md)\" --ignore-path .gitignore",
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
     "start": "next start",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -18,20 +19,21 @@
     "@zeit/next-typescript": "^1.1.1",
     "fbemitter": "^2.1.1",
     "howler": "^2.1.3",
-    "next": "^12.1.0",
+    "next": "^14.2.15",
     "next-images": "^1.4.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.33.5",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@types/fbemitter": "2.0.32",
-    "@types/howler": "2.1.2",
+    "@types/fbemitter": "2.0.35",
+    "@types/howler": "2.2.12",
     "@types/next": "9.0.0",
-    "@types/node": "13.11.0",
-    "@types/react": "16.9.32",
-    "@types/react-dom": "16.9.6",
-    "@types/styled-components": "5.0.1",
+    "@types/node": "22.7.5",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.1",
+    "@types/styled-components": "5.1.34",
     "@typescript-eslint/eslint-plugin": "2.27.0",
     "@typescript-eslint/parser": "2.27.0",
     "babel-eslint": "10.1.0",
@@ -44,17 +46,11 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-react-hooks": "3.0.0",
-    "husky": "4.2.3",
-    "lint-staged": "10.1.2",
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
     "prettier": "2.0.4",
     "styled-modern-normalize": "0.2.0",
-    "typescript": "3.8.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "tsc --build src/tsconfig.json"
-    }
+    "typescript": "5.6.3"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -63,5 +59,6 @@
     "*.{json,md}": [
       "prettier --write"
     ]
-  }
+  },
+  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
 }

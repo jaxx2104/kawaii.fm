@@ -36,9 +36,7 @@ const StyledButton = styled.button`
   }
 `
 
-const AudioPlayer = (props: Props) => {
-  const { label, src } = props
-
+const AudioPlayer = ({ label = "さいせい", src }: Props) => {
   return (
     <StyledButton
       onClick={() => {
@@ -48,10 +46,6 @@ const AudioPlayer = (props: Props) => {
       {label}
     </StyledButton>
   )
-}
-
-AudioPlayer.defaultProps = {
-  label: "さいせい"
 }
 
 export default AudioPlayer
